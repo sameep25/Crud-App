@@ -3,12 +3,13 @@ import mongoose from "mongoose";
 import route from "./Routes/routes.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import {mongoURI} from "./Config/keys.js"
 
 const app = express();
 
 const PORT = 8000;
-const URL = mongoURI ;
+const URL = `mongodb+srv://${username}:${password}@crud.evo3a.mongodb.net/CRUD?retryWrites=true&w=majority` ;
+const username = process.env.MONGO_USERNAME;
+const password = process.env.MONGO_PASSWORD;
 
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
